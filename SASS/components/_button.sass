@@ -1,0 +1,59 @@
+.button
+    &:link, &:visited
+        display: flex
+        gap: 16px
+        align-items: center
+        padding: 10px 16px
+        border-radius: 4px
+        width: 100%
+        transition: background .3s ease
+    span
+        color: $color-violet
+        font-size: 14px
+        line-height: 20px
+        font-weight: 500
+        transition: color .3s ease
+    path
+        transition: fill .3s ease
+    &:hover
+        background: $color-hover
+        span
+            color: $color-white
+        path
+            fill: $color-white
+
+    &_active
+        background: $color-active
+        span
+            color: $color-white
+        path
+            fill: $color-white
+
+    &_back
+        &:link, &:visited
+            gap: 4px
+            padding: 0
+            span
+                color: $color-violet
+                font-size: 13px
+                line-height: 20px
+                font-weight: 500
+                transition: color .3s ease
+
+        &:hover
+            background: none
+            path
+                fill: #7E84A3
+
+    &_inner
+        &:link, &:visited
+            padding: 12px 20px
+
+        span
+            color: $color-black
+
+    &_inner_active
+        background: $color-active
+        span
+            font-weight: 700
+            color: $color-white

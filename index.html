@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="GB Adviser" />
+    <meta
+      property="og:description"
+      content="Личный кабинет GB | Страница настройки профиля"
+    />
+    <title>GB Adviser</title>
+    <!-- Предзагрузка шрифта -->
+    <link
+      href="src/fonts/Inter/Inter-VariableFont_slnt,wght.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- tabby -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+    <!-- tabby -->
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a href="\" class="header__logo">
+          <svg
+            width="42"
+            height="38"
+            viewBox="0 0 42 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M28.473 18.908C28.3856 18.9779 28.3372 18.994 28.3278 18.9564C27.4771 18.9416 26.6265 18.9342 25.7758 18.9342C24.577 18.9342 23.7277 18.8959 23.2278 18.8193C21.2832 18.5223 19.6288 17.7166 18.2648 16.4023C15.4681 13.7065 14.6302 10.3299 15.751 6.27273C15.88 6.0362 16.005 5.78624 16.126 5.52284C17.4463 2.67849 19.8674 0.821902 22.9375 0.140549C23.3071 0.0585716 23.9454 0.0162388 24.8525 0.013551C29.1664 -0.00123178 33.4346 -0.00391975 37.6571 0.0054875C37.8211 0.0054875 37.8661 0.0787296 37.7922 0.225214L28.473 18.908Z"
+              fill="#6C72FF"
+            />
+            <path
+              d="M15.751 6.27271C14.6302 10.3299 15.4681 13.7064 18.2648 16.4023C19.6288 17.7166 21.2831 18.5223 23.2277 18.8193C23.7277 18.8959 24.577 18.9342 25.7758 18.9342C26.6264 18.9342 27.4771 18.9416 28.3278 18.9564L18.8917 38L0.108104 37.9939C0.0896412 37.9938 0.071515 37.989 0.0554287 37.9799C0.0393425 37.9708 0.0258242 37.9578 0.0161477 37.9421C0.00647116 37.9264 0.000953335 37.9085 0.000112865 37.89C-0.000727604 37.8716 0.00313678 37.8532 0.0113431 37.8367L15.751 6.27271Z"
+              fill="#D0D0FB"
+            />
+            <path
+              d="M18.8916 38L28.3277 18.9564C28.3371 18.994 28.3855 18.9779 28.4729 18.908C29.6649 18.8986 30.8442 18.8939 32.0107 18.8939C33.2242 18.8953 34.4922 19.1997 35.8146 19.8071C40.1466 21.7987 42.2592 26.7396 40.8582 31.2913C39.8684 34.5026 37.1692 37.0506 33.8249 37.7823C33.161 37.9275 32.1457 38 30.779 38C26.8548 37.9987 22.8924 37.9987 18.8916 38Z"
+              fill="#212D9D"
+            />
+          </svg>
+          <span> GB Adviser </span>
+        </a>
+        <div class="header__search-input">
+          <svg
+            width="17.000000"
+            height="17.000000"
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <mask id="mask_3_1100" fill="white">
+              <path
+                id="color"
+                d="M7.5 0C11.6422 0 15 3.35785 15 7.5C15 9.21014 14.4276 10.7866 13.464 12.0483L16.7071 15.2929C17.0976 15.6834 17.0976 16.3166 16.7071 16.7071C16.3466 17.0676 15.7794 17.0953 15.3871 16.7903L15.2929 16.7071L12.0483 13.464C10.7866 14.4276 9.21014 15 7.5 15C3.35785 15 0 11.6422 0 7.5C0 3.35785 3.35785 0 7.5 0ZM2 7.5C2 4.46246 4.46243 2 7.5 2C10.5376 2 13 4.46246 13 7.5C13 8.85114 12.5128 10.0885 11.7041 11.0446C11.5536 11.091 11.412 11.1738 11.2929 11.2929C11.1738 11.412 11.091 11.5536 11.0459 11.7045C10.0885 12.5128 8.85114 13 7.5 13C4.46243 13 2 10.5375 2 7.5Z"
+                clip-rule="evenodd"
+                fill=""
+                fill-opacity="1.000000"
+                fill-rule="evenodd"
+              />
+            </mask>
+            <path
+              id="color"
+              d="M7.5 0C11.6422 0 15 3.35785 15 7.5C15 9.21014 14.4276 10.7866 13.464 12.0483L16.7071 15.2929C17.0976 15.6834 17.0976 16.3166 16.7071 16.7071C16.3466 17.0676 15.7794 17.0953 15.3871 16.7903L15.2929 16.7071L12.0483 13.464C10.7866 14.4276 9.21014 15 7.5 15C3.35785 15 0 11.6422 0 7.5C0 3.35785 3.35785 0 7.5 0ZM2 7.5C2 4.46246 4.46243 2 7.5 2C10.5376 2 13 4.46246 13 7.5C13 8.85114 12.5128 10.0885 11.7041 11.0446C11.5536 11.091 11.412 11.1738 11.2929 11.2929C11.1738 11.412 11.091 11.5536 11.0459 11.7045C10.0885 12.5128 8.85114 13 7.5 13C4.46243 13 2 10.5375 2 7.5Z"
+              clip-rule="evenodd"
+              fill="#7E84A3"
+              fill-opacity="1.000000"
+              fill-rule="evenodd"
+              mask="url(#mask_3_1100)"
+            />
+            <path
+              id="color"
+              d=""
+              fill="#979797"
+              fill-opacity="0.000000"
+              fill-rule="nonzero"
+            />
+          </svg>
+          <input type="search" placeholder="Поиск..." />
+        </div>
+        <div class="header__btns">
+          <a href="#" class="header__chat-btn">
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <mask id="mask_2_12" fill="white">
+                <path
+                  id="color"
+                  d="M19 3C20.1046 3 21 3.89545 21 5L21 17C21 18.1046 20.1046 19 19 19L9 19L3 22L3 5C3 3.89545 3.89542 3 5 3L19 3ZM5 5L19 5L19 17L8.44604 17L5 18.468L5 5ZM17 10L17 8L7 8L7 10L17 10ZM11 12L11 14L7 14L7 12L11 12Z"
+                  clip-rule="evenodd"
+                  fill=""
+                  fill-opacity="1.000000"
+                  fill-rule="evenodd"
+                />
+              </mask>
+              <path
+                id="color"
+                d="M19 3C20.1046 3 21 3.89545 21 5L21 17C21 18.1046 20.1046 19 19 19L9 19L3 22L3 5C3 3.89545 3.89542 3 5 3L19 3ZM5 5L19 5L19 17L8.44604 17L5 18.468L5 5ZM17 10L17 8L7 8L7 10L17 10ZM11 12L11 14L7 14L7 12L11 12Z"
+                clip-rule="evenodd"
+                fill="#7E84A3"
+                fill-opacity="1.000000"
+                fill-rule="evenodd"
+                mask="url(#mask_2_12)"
+              />
+              <path
+                id="color"
+                d=""
+                fill="#979797"
+                fill-opacity="0.000000"
+                fill-rule="nonzero"
+              />
+            </svg>
+            <span class="message_notify"></span>
+          </a>
+          <a href="#" class="header__notify-btn">
+            <svg
+              width="24.000000"
+              height="24.000000"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <mask id="mask_2_6" fill="white">
+                <path
+                  id="color"
+                  d="M13 3C15.2816 3.46375 17 5.58148 17 8L17 12C18.1046 12 19 12.8954 19 14L19 19L14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19L5 19L5 14C5 12.8954 5.89542 12 7 12L7 8C7 5.58112 8.71786 3.46332 11 3L13 3ZM9.0051 7.82373C9.09634 6.2489 10.4023 5 12 5C13.6569 5 15 6.34314 15 8L15 12C15 13.1046 15.8954 14 17 14L17 17L7 17L7 14C8.10458 14 9 13.1046 9 12L9 8L9.0051 7.82373Z"
+                  clip-rule="evenodd"
+                  fill=""
+                  fill-opacity="1.000000"
+                  fill-rule="evenodd"
+                />
+              </mask>
+              <path
+                id="color"
+                d="M13 3C15.2816 3.46375 17 5.58148 17 8L17 12C18.1046 12 19 12.8954 19 14L19 19L14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19L5 19L5 14C5 12.8954 5.89542 12 7 12L7 8C7 5.58112 8.71786 3.46332 11 3L13 3ZM9.0051 7.82373C9.09634 6.2489 10.4023 5 12 5C13.6569 5 15 6.34314 15 8L15 12C15 13.1046 15.8954 14 17 14L17 17L7 17L7 14C8.10458 14 9 13.1046 9 12L9 8L9.0051 7.82373Z"
+                clip-rule="evenodd"
+                fill="#7E84A3"
+                fill-opacity="1.000000"
+                fill-rule="evenodd"
+                mask="url(#mask_2_6)"
+              />
+              <path
+                id="color"
+                d=""
+                fill="#979797"
+                fill-opacity="0.000000"
+                fill-rule="nonzero"
+              />
+            </svg>
+            <span class="notify_count"> 5 </span>
+          </a>
+        </div>
+        <div class="header__profile">
+          <img
+            class="profile_img"
+            src="src/img/profile-img.png"
+            alt="profile image"
+          />
+          <h2 class="profile__user-name">Саша Смелая</h2>
+          <svg
+            width="12"
+            height="7"
+            viewBox="0 0 12 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.292893 0.292893C-0.0675907 0.653377 -0.0953203 1.22061 0.209705 1.6129L0.292893 1.70711L5.29289 6.70711C5.65338 7.06759 6.22061 7.09532 6.6129 6.7903L6.70711 6.70711L11.7071 1.70711C12.0976 1.31658 12.0976 0.683418 11.7071 0.292893C11.3466 -0.0675907 10.7794 -0.0953203 10.3871 0.209705L10.2929 0.292893L6 4.585L1.70711 0.292893C1.34662 -0.0675907 0.779392 -0.0953203 0.387101 0.209705L0.292893 0.292893Z"
+              fill="#7E84A3"
+            />
+          </svg>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <aside class="aside">
+        <div class="aside__wrapper">
+          <nav class="aside__nav">
+            <a class="button" href="#">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.3287 3.51558C13.3873 3.56764 13.4428 3.6231 13.4948 3.68167L19.4948 10.4317C19.8202 10.7978 20 11.2706 20 11.7604V19C20 20.1046 19.1046 21 18 21H14.002C14.0013 21 14.0007 21 14 21H10C9.99934 21 9.99868 21 9.99803 21H6C4.89543 21 4 20.1046 4 19V11.7604C4 11.2706 4.17976 10.7978 4.50518 10.4317L10.5052 3.68167C11.239 2.8561 12.5032 2.78174 13.3287 3.51558ZM11 19H13V15H11V19ZM15 19V14C15 13.4477 14.5523 13 14 13H10C9.44772 13 9 13.4477 9 14V19H6V11.7604L12 5.0104L18 11.7604V19H15Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Главная</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6 15V17H4V15H6ZM19 15C19.5523 15 20 15.4477 20 16C20 16.5523 19.5523 17 19 17H9C8.44772 17 8 16.5523 8 16C8 15.4477 8.44772 15 9 15H19ZM6 11V13H4V11H6ZM19 11C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H9C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11H19ZM6 7V9H4V7H6ZM19 7C19.5523 7 20 7.44772 20 8C20 8.55228 19.5523 9 19 9H9C8.44772 9 8 8.55228 8 8C8 7.44772 8.44772 7 9 7H19Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Запросы</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M11.5459 3.57029C11.9641 3.15205 12.5498 2.9466 13.1377 3.01192L21 3L20.9881 10.8623C21.0534 11.4502 20.848 12.0359 20.4297 12.4541L11.4541 21.4297C10.6937 22.1901 9.46093 22.1901 8.70056 21.4297L2.57027 15.2994C1.80991 14.5391 1.80991 13.3063 2.57027 12.5459L11.5459 3.57029ZM13 5L3.94704 13.9227L10.0773 20.053L19 11V5H13ZM14 8L16 10L14 12L12 10L14 8Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Заметки</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.5 2L12 5H20C21.1046 5 22 5.89543 22 7V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19V4C2 2.89543 2.89543 2 4 2H9.5ZM11.0632 7L8.563 4H4V19H20V7H11.0632Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Категории</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 11C19.0871 11 20.9253 12.0656 22.0002 13.6825L21.9993 17H14L13.999 18.952L14.0215 20H2V19C2 15.6863 4.68629 13 8 13C9.37834 13 10.6509 13.4657 11.6662 14.2518C12.662 12.3204 14.6768 11 17 11ZM8 15C6.26204 15 4.78296 16.1084 4.23109 17.6569L4.16936 17.8447L4.126 18H11.873L11.8362 17.8625C11.3827 16.3295 10.0355 15.1846 8.4051 15.0203L8.19987 15.0049L8 15ZM17 13C15.6048 13 14.3764 13.7144 13.6606 14.7973L13.535 15H20.464L20.3707 14.845C19.6927 13.7872 18.5304 13.0708 17.2007 13.005L17 13ZM8 4C10.2091 4 12 5.79086 12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4ZM17 4C18.6569 4 20 5.34315 20 7C20 8.65685 18.6569 10 17 10C15.3431 10 14 8.65685 14 7C14 5.34315 15.3431 4 17 4ZM8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6ZM17 6C16.7239 6 16 6 16 6C16 6 16 6.72386 16 7C16 7.27614 16 8 16 8C16 8 16.7239 8 17 8C17.2761 8 18 8 18 8C18 8 18 7.27614 18 7C18 6.86441 18 6 18 6C18 6 17.1356 6 17 6Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Пользователи</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.7857 19C19.4563 19 20 19.4477 20 20C20 20.5523 19.4563 21 18.7857 21H4.21429C3.54365 21 3 20.5523 3 20C3 19.4477 3.54365 19 4.21429 19H18.7857ZM18 3C19.1046 3 20 3.89543 20 5V17H3V13C3 11.8954 3.89543 11 5 11H8V9C8 7.89543 8.89543 7 10 7H13V5C13 3.89543 13.8954 3 15 3H18ZM8 13H5V15H8V13ZM13 9H10V15H13V9ZM18 5H15V15H18V5Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Статистика</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.393 3.08026C12.6263 3.17944 12.8122 3.36304 12.9126 3.59335L14.9554 8.27719L20.098 8.74815C20.6445 8.79819 21.0464 9.27618 20.9957 9.81576C20.9722 10.0654 20.8529 10.2968 20.6621 10.4623L16.782 13.828L17.9175 18.8029C18.0382 19.3316 17.702 19.8567 17.1666 19.9758C16.9189 20.031 16.6591 19.9904 16.4408 19.8623L12 17.2586L7.55917 19.8623C7.08728 20.139 6.4776 19.9856 6.19741 19.5196C6.06775 19.304 6.02662 19.0476 6.08245 18.8029L7.21798 13.828L3.33788 10.4623C2.92558 10.1046 2.88497 9.48469 3.24717 9.07757C3.41477 8.88918 3.64907 8.77131 3.90194 8.74815L9.04454 8.27719L11.0873 3.59335C11.3044 3.09565 11.889 2.86593 12.393 3.08026ZM13.5968 10.1236L12 6.46162L10.4031 10.1236L6.38164 10.4914L9.4162 13.1228L8.52801 17.0114L12 14.9764L15.4709 17.0114L14.5838 13.1228L17.6173 10.4914L13.5968 10.1236Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Избранное</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19 3C20.1046 3 21 3.89543 21 5V17C21 18.1046 20.1046 19 19 19H9L3 22L3 5C3 3.89543 3.89543 3 5 3H19ZM19 5H5V18.468L8.44603 17H19V5ZM11 12V14H7V12H11ZM17 8V10H7V8H17Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Поддержка</span>
+            </a>
+          </nav>
+          <h3 class="aside__which-block">Информация</h3>
+          <nav class="aside__nav">
+            <a class="button button_active" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM16 10C16 7.79086 14.2091 6 12 6C9.79086 6 8 7.79086 8 10H10L10.0055 9.85074C10.0818 8.81588 10.9456 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12C11.4477 12 11 12.4477 11 13V14C11 14.5523 11.4477 15 12 15C12.5523 15 13 14.5523 13 14V13.874C14.7252 13.4299 16 11.8638 16 10ZM13 18V16H11V18H13Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>База знаний</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C15.866 2 19 5.13401 19 9C19 11.3782 17.8141 13.4793 16.0013 14.7444L16 22L12 19L8 22L7.99967 14.7451C6.18637 13.4801 5 11.3786 5 9C5 5.13401 8.13401 2 12 2ZM14 16H10V18L12 17L14 18V16ZM12 4C9.23858 4 7 6.23858 7 9C7 11.7614 9.23858 14 12 14C14.7614 14 17 11.7614 17 9C17 6.23858 14.7614 4 12 4Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Обновления</span>
+            </a>
+          </nav>
+          <h3 class="aside__which-block">Настройки</h3>
+          <nav class="aside__nav">
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 12C16.3349 12 19.8645 15.4478 19.9962 19.7508L20 20V21H4V20C4 15.5817 7.58172 12 12 12ZM12 14C9.14444 14 6.75479 15.9948 6.14861 18.667L6.10104 18.8977L6.084 19H17.915L17.899 18.8977C17.4095 16.2618 15.1969 14.2312 12.4739 14.0184L12.2249 14.0041L12 14ZM12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3ZM12 5C10.8954 5 10 5.89543 10 7C10 8.10457 10.8954 9 12 9C13.1046 9 14 8.10457 14 7C14 5.89543 13.1046 5 12 5Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Профиль</span>
+            </a>
+            <a class="button" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.5 2L16 5L20 5.5L22 8.5L20 12L22 15.5L20 18.5L16 19L13.5 22H10.5L8 19L4 18.5L2 15.5L4 12L2 8.5L4 5.5L8 5L10.5 2H13.5ZM12.562 3.999H11.437L9.0312 6.88666L5.156 7.37L4.35 8.581L6.3035 12L4.35 15.418L5.156 16.629L9.0312 17.1133L11.436 19.999H12.563L14.9688 17.1133L18.843 16.629L19.649 15.418L17.6965 12L19.649 8.581L18.843 7.37L14.9688 6.88666L12.562 3.999ZM12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8ZM12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span>Общие настройки</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+      <section class="content">
+        <div class="content__box">
+          <div class="content__left">
+            <a class="button button_back" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="10"
+                viewBox="0 0 13 10"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.3871 0.209705L4.29289 0.292893L0.292893 4.29289C-0.0675907 4.65338 -0.0953203 5.22061 0.209705 5.6129L0.292893 5.70711L4.29289 9.70711C4.68342 10.0976 5.31658 10.0976 5.70711 9.70711C6.06759 9.34662 6.09532 8.77939 5.7903 8.3871L5.70711 8.29289L3.414 5.999L12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4L3.416 3.999L5.70711 1.70711C6.06759 1.34662 6.09532 0.779392 5.7903 0.387101L5.70711 0.292893C5.34662 -0.0675907 4.77939 -0.0953203 4.3871 0.209705Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <span> Назад </span>
+            </a>
+            <h2 class="title-page">Настройки профиля</h2>
+            <nav class="content__nav">
+              <a class="button button_inner button_inner_active" href="#"
+                ><span>Первичная настройка</span></a
+              >
+              <a class="button button_inner" href="#"
+                ><span>Профиль пользователя</span></a
+              >
+              <a class="button button_inner" href="#"
+                ><span>Изменение общих настроек</span></a
+              >
+              <a class="button button_inner" href="#"
+                ><span>Дополнительные возможности</span></a
+              >
+              <a class="button button_inner" href="#"
+                ><span>Отправка запросов</span></a
+              >
+              <a class="button button_inner" href="#"
+                ><span>Работа со стастистикой</span></a
+              >
+            </nav>
+          </div>
+          <div class="content__right">
+            <div class="content__search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.5 3C14.6421 3 18 6.35786 18 10.5C18 12.2101 17.4276 13.7866 16.464 15.0483L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3466 20.0676 18.7794 20.0953 18.3871 19.7903L18.2929 19.7071L15.0483 16.464C13.7866 17.4276 12.2101 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3ZM10.5 5C7.46243 5 5 7.46243 5 10.5C5 13.5376 7.46243 16 10.5 16C11.8511 16 13.0885 15.5128 14.0459 14.7045C14.091 14.5536 14.1738 14.412 14.2929 14.2929C14.412 14.1738 14.5536 14.091 14.7041 14.0446C15.5128 13.0885 16 11.8511 16 10.5C16 7.46243 13.5376 5 10.5 5Z"
+                  fill="#7E84A3"
+                />
+              </svg>
+              <input type="search" placeholder="Поиск..." />
+            </div>
+            <div class="content__right_wrapper">
+              <div class="content__main">
+                <div class="content__main_first-floor">
+                  <h2 class="title-heading">Первичная настройка</h2>
+                  <p class="paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio facilis minima necessitatibus ducimus illo sed
+                    quo deserunt excepturi sunt non enim inventore aliquam esse
+                    asperiores ea dolorem quibusdam labore quos facere iusto,
+                    obcaecati doloremque aliquid est.
+                  </p>
+                  <div class="recs__box">
+                    <p class="paragraph paragraph_recs">Рекомендации:</p>
+                    <p class="paragraph paragraph_recs">
+                      Lorem ipsum dolor sit, amet, consectetur adipisicing elit.
+                      Fugiat.
+                    </p>
+                  </div>
+                  <div class="line content__first-floor-line"></div>
+                </div>
+                <div
+                  class="content__main_first-floor content__main_second-floor"
+                >
+                  <h3 class="title-heading">Начало работы</h3>
+                  <p class="paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Magnam sunt, iste animi, quia numquam, rerum veritatis
+                    itaque tempore facilis repellendus harum reiciendis.
+                  </p>
+                  <div class="content__steps">
+                    <div class="content__one-step">
+                      <span class="paragraph paragraph_recs">1</span>
+                      <p class="paragraph">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat, voluptatem repellat
+                        provident, pariatur.
+                      </p>
+                    </div>
+                    <div class="content__one-step">
+                      <span class="paragraph paragraph_recs">2</span>
+                      <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Facilis harum delectus nemo iure praesentium amet,
+                        maxime veniam.
+                      </p>
+                    </div>
+                    <div class="content__one-step">
+                      <span class="paragraph paragraph_recs">3</span>
+                      <p class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repellendus aut nam earum! Lorem ipsum dolor sit
+                        amet.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="line content__first-floor-line"></div>
+                </div>
+                <div
+                  class="content__main_first-floor content__main_second-floor"
+                >
+                  <h3 class="title-heading">Дополнительная информация</h3>
+                  <ul class="tabs">
+                    <li>
+                      <a
+                        class="tabs__link paragraph paragraph_recs"
+                        data-tabby-default
+                        href="#one"
+                        >Пункт 1</a
+                      >
+                    </li>
+                    <li>
+                      <a class="tabs__link paragraph paragraph_recs" href="#two"
+                        >Пункт 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="tabs__link paragraph paragraph_recs"
+                        href="#three"
+                        >Пункт 3</a
+                      >
+                    </li>
+                    <div class="line tabs__line"></div>
+                  </ul>
+                  <div class="tabs__content">
+                    <div class="tabs__inner" id="one">
+                      <p class="paragraph">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat.
+                        <br />
+                        <br />
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat.
+                      </p>
+                    </div>
+                    <div class="tabs__inner" id="two">
+                      <p class="paragraph">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Corrupti unde quos cum, aliquid molestiae nulla
+                        nihil omnis! Voluptas, assumenda aspernatur?
+                        <br />
+                        <br />
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat.
+                      </p>
+                    </div>
+                    <div class="tabs__inner" id="three">
+                      <p class="paragraph">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat.
+                        <br />
+                        <br />
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Similique, doloribus, nulla. Soluta error
+                        repudiandae cumque veniam fugiat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-help">
+                <h3 class="title-heading article-help__heading">
+                  Вам помогла эта статья?
+                </h3>
+                <div class="article-help__btns">
+                  <button class="article-help__btn">Да</button>
+                  <button class="article-help__btn">Нет</button>
+                </div>
+                <p class="article-help__info">50 людям помогла эта статья</p>
+              </div>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <h3 class="title-heading">Сообщество GB</h3>
+                <p class="card__paragraph">
+                  Обращайтесь за помощью к членам сообщества, задавайте любые
+                  вопросы и получайте ответы.
+                </p>
+                <a class="card__link" href="#">Присоединиться к сообществу</a>
+              </div>
+              <div class="card">
+                <h3 class="title-heading">GB Connect</h3>
+                <p class="card__paragraph">
+                  Пользуйтесь всеми возможностями GB. Пройдите регистрацию в GB
+                  Connect.
+                </p>
+                <a class="card__link" href="#">Регистрация</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- tabby -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/js/tabby.polyfills.min.js"></script>
+    <!-- tabby -->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
