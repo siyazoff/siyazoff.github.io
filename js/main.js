@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ScrollReveal().reveal("[scroll-anime]");
+  const img = document.querySelector(".main__img");
+
+  if (img.complete) {
+    img.classList.add("loaded"); // Если уже закешировано, сразу показываем
+  } else {
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+  }
 
   const allTabs = document.querySelectorAll("[data-tabs]");
 
@@ -75,6 +83,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sections = document.querySelectorAll("section"); // Получаем все секции
   const points = document.querySelectorAll(".scrollbar__point"); // Получаем все поинты
+  const scrollbar = document.querySelector(".scrollbar");
+  const footer = document.querySelector(".footer");
+
+  function updateScrollbarPosition() {
+    const footerRect = footer.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    const distanceToFooter = footerRect.top - viewportHeight + 50;
+
+    if (distanceToFooter <= 0) {
+      scrollbar.style.top = "40%";
+    } else {
+      scrollbar.style.top = "50%";
+      scrollbar.style.transform = "translateY(-50%)";
+    }
+  }
+
+  // Запускаем функцию при прокрутке
+  window.addEventListener("scroll", updateScrollbarPosition);
+  updateScrollbarPosition();
 
   const observerOptions = {
     root: null, // Отслеживаем относительно окна
