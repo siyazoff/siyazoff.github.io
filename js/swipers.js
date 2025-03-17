@@ -1,14 +1,24 @@
 const swiperRules = new Swiper(".swiper-rules", {
   speed: 800,
   grabCursor: true,
-  slidesPerView: 3,
-  spaceBetween: 23,
+
   allowSlideNext: true,
   allowSlidePrev: true,
 
   navigation: {
     prevEl: ".swiper-rules__prev",
     nextEl: ".swiper-rules__next",
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1.6,
+      spaceBetween: 14,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 23,
+    },
   },
 
   on: {
@@ -69,7 +79,16 @@ const buildModalRuleSwiper = (sliderElm) => {
       speed: 800,
       slidesPerView: 1,
       spaceBetween: 20,
-      allowTouchMove: false, // Только winners можно свайпить вручную
+      allowTouchMove: false,
+
+      breakpoints: {
+        320: {
+          allowTouchMove: true,
+        },
+        768: {
+          allowTouchMove: false,
+        },
+      },
     }
   );
 
@@ -94,6 +113,15 @@ const buildModalRuleSwiper = (sliderElm) => {
       slidesPerView: 1,
       spaceBetween: 20,
       allowTouchMove: false,
+
+      breakpoints: {
+        320: {
+          allowTouchMove: true,
+        },
+        768: {
+          allowTouchMove: false,
+        },
+      },
     }
   );
 

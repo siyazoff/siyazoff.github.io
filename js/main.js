@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".main__img");
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const img = document.querySelector(
+    isMobile ? ".main__img_mobile" : ".main__img_desk"
+  );
 
   if (img.complete) {
-    img.classList.add("loaded"); // Если уже закешировано, сразу показываем
+    img.classList.add("loaded");
   } else {
     img.addEventListener("load", () => {
       img.classList.add("loaded");
@@ -39,8 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Считываем изначальную высоту rule-item__content
     const contentHeight = content.offsetHeight;
-
-    // Устанавливаем отрицательный margin-bottom
     content.style.marginBottom = `-${contentHeight + 20}px`;
 
     // Функция для открытия контента
@@ -52,34 +53,50 @@ document.addEventListener("DOMContentLoaded", () => {
     // Функция для закрытия контента
     function closeContent() {
       item.classList.remove("hovered");
-      content.style.marginBottom = `-${contentHeight + 20}px`; // Скрытие содержимого
+      content.style.marginBottom = `-${contentHeight + 20}px`;
     }
 
     // События для десктопа
-    item.addEventListener("mouseenter", openContent);
-    item.addEventListener("mouseleave", closeContent);
+    if (!isMobile) {
+      item.addEventListener("mouseenter", openContent);
+      item.addEventListener("mouseleave", closeContent);
+    }
 
-    // События для мобильных устройств
-    item.addEventListener("touchstart", function (event) {
-      openContent();
-      event.preventDefault(); // Предотвращаем стандартное поведение (например, прокрутку)
-    });
+    // Открытие/закрытие по клику на мобильных устройствах
+    if (isMobile) {
+      item.addEventListener("click", function (event) {
+        event.preventDefault(); // Предотвращаем выделение/прокрутку
 
-    item.addEventListener("touchend", function (event) {
-      closeContent();
-      event.preventDefault();
-    });
+        const isOpen = item.classList.contains("hovered");
+
+        // Закрываем все другие элементы перед открытием текущего
+        ruleItems.forEach((el) => {
+          el.classList.remove("hovered");
+          el.querySelector(".rule-item__content").style.marginBottom = `-${
+            el.querySelector(".rule-item__content").offsetHeight + 20
+          }px`;
+        });
+
+        if (!isOpen) {
+          openContent(); // Открываем текущий, если он не был открыт
+        }
+      });
+    }
   });
 
   const headerButtons = document.querySelectorAll(".btn-header");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      headerButtons.forEach((btn) => btn.classList.add("iconed"));
-    } else {
-      headerButtons.forEach((btn) => btn.classList.remove("iconed"));
-    }
-  });
+  if (isMobile) {
+    headerButtons.forEach((btn) => btn.classList.add("iconed"));
+  } else {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        headerButtons.forEach((btn) => btn.classList.add("iconed"));
+      } else {
+        headerButtons.forEach((btn) => btn.classList.remove("iconed"));
+      }
+    });
+  }
 
   const sections = document.querySelectorAll("section"); // Получаем все секции
   const points = document.querySelectorAll(".scrollbar__point"); // Получаем все поинты
@@ -173,20 +190,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function resetModalSwipers(modalEl) {
-    // Предположим, data-modal="rule-modal-1"
-    // Вытаскиваем "rule-modal-1"
-    const modalId = modalEl.getAttribute("data-modal"); // "rule-modal-1"
-    // Извлекаем цифру (или что-то после "rule-modal-")
+    const modalId = modalEl.getAttribute("data-modal");
+
     const match = modalId.match(/rule-modal-(\d+)/);
-    if (!match) return; // на всякий случай
+    if (!match) return;
 
-    const sliderId = match[1]; // "1", "2", ...
+    const sliderId = match[1];
 
-    // Получаем объект { swiperTitle, swiperWinners, swiperCriteria }
     const group = modalRuleSwipers[sliderId];
     if (!group) return;
 
-    // Сбрасываем все на индекс 0
     group.swiperTitle.slideTo(0, 0);
     group.swiperWinners.slideTo(0, 0);
     group.swiperCriteria.slideTo(0, 0);

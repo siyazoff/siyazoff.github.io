@@ -17,6 +17,9 @@
     border: none
     transition: background .3s ease
 
+    @media ( max-width: 768px )
+        font-size: 12px
+
 .btn-header
     position: absolute
     background: rgba(0, 89, 215, 0.49)
@@ -24,14 +27,27 @@
     transition: all .3s ease
     z-index: 100
 
+    @media (max-width: 768px)
+        padding: 0
+
     &_tg
         width: 150px
         height: 48px
         top: 0
         right: 200px
 
+        @media (max-width: 768px)
+            width: 28px
+            height: 28px
+            right: 54px
+            top: 12px
+
         &.iconed
             right: 0
+
+            @media (max-width: 768px)
+                right: 54px
+                top: 12px
 
     &_an
         width: 185px
@@ -39,8 +55,18 @@
         right: 0
         top: 0
 
+        @media (max-width: 768px)
+            width: 28px
+            height: 28px
+            right: 16px
+            top: 12px
+
         &.iconed
             top: 50px
+
+            @media (max-width: 768px)
+                right: 16px
+                top: 12px
 
     span
         text-align: center
@@ -49,6 +75,9 @@
         width: 100%
         overflow: hidden
         transition: all .3s ease
+
+        @media (max-width: 768px)
+            display: none
 
     svg
         position: absolute
@@ -60,9 +89,21 @@
         pointer-events: none
         transition: all .3s ease
 
+        @media (max-width: 768px)
+            width: 28px
+            height: 28px
+
     &.iconed
         width: 40px
         height: 40px
+        background: white
+
+        &:hover
+            background: #a8c5ee
+
+        @media (max-width: 768px)
+            width: 28px
+            height: 28px
 
         span
             opacity: 0
@@ -82,7 +123,7 @@
 @media (hover: none)
     .btn-header
         &:active
-            background: #0059D7
+            background: #a8c5ee
 
 
 .container
@@ -96,6 +137,9 @@
 
     &_s
         max-width: 950px
+
+    @media ( max-width: 768px )
+        padding-inline: 16px
 
 .scrollbar
     position: fixed
@@ -127,7 +171,10 @@
         &.active
             width: 20px
             height: 20px
-    
+
+
+    @media (max-width: 768px)
+        display: none
 
 .header
     position: fixed
@@ -137,6 +184,8 @@
     z-index: 100
     padding: 30px 0 0
 
+    @media ( max-width: 768px )
+        padding: 0
 
     &__btns
         display: flex
@@ -169,19 +218,42 @@
         &.loaded
             opacity: 1
 
+        &_desk
+            @media (max-width:768px)
+                display: none
+
+        &_mobile
+            display: none
+
+            @media (max-width:768px)
+                display: flex
+
+            
+
 
 .hero
     position: relative
     padding: 200px 0 100px
     min-height: 1000px
 
+    @media ( max-width: 768px )
+        padding: 150px 0 100px
+        min-height: fit-content
+
     &__box
         display: grid
         grid-template-columns: 340px 1fr
         gap: 30px
 
+        @media ( max-width: 768px )
+            grid-template-columns: 100%
+            gap: 60px
+
     &__left
         padding-top: 24px
+
+        @media ( max-width: 768px )
+            padding-top: 0
 
         &-content
             color: #FFF
@@ -191,12 +263,20 @@
             line-height: 120%
             text-transform: uppercase  
 
+            @media ( max-width: 768px )
+                font-size: 16px
+
     &__right
         display: flex
         flex-direction: column
         gap: 40px
         justify-content: end
         align-items: end
+
+        @media ( max-width: 768px )
+            align-items: start
+            justify-content: start
+            gap: 24px
 
     &__title
         color: #E2EEFF
@@ -208,8 +288,14 @@
         display: flex
         flex-direction: column
 
+        @media ( max-width: 768px )
+            font-size: 63px
+
         span
             font-size: 106px
+
+            @media ( max-width: 768px )
+                font-size: 51px
 
     &__desc
         color: #C8DFFF
@@ -217,10 +303,16 @@
         font-weight: 100
         line-height: 110%
 
+        @media ( max-width: 768px )
+            font-size: 32px
+
     &__btn
         display: flex
         align-items: center
         gap: 20px
+
+        @media ( max-width: 768px )
+            margin-top: 16px
 
         span
             color: #FFF
@@ -228,11 +320,18 @@
             font-weight: 100
             line-height: 110%
 
+            @media ( max-width: 768px )
+                font-size: 24px
+
+
         &-svg
             position: absolute
             top: 0
             left: 0
             transition: .3s ease
+
+            @media ( max-width: 768px )
+                display: none
 
             &-hover
                 opacity: 0
@@ -241,11 +340,23 @@
                 top: -16px
                 left: -16px
 
+            &_mob
+                display: none
+
+                @media ( max-width: 768px )
+                    display: flex
+
+
+
         &-svg-wrapper
             position: relative
             width: 134px
             height: 134px
             display: flex
+
+            @media ( max-width: 768px )
+                width: 76px
+                height: 76px
 
         &:hover
             .hero__btn-svg-hover
@@ -256,13 +367,23 @@
                 opacity: 0
 
 .dyn-world
+    position: relative
     padding: 100px 0 0
+
+    @media ( max-width: 768px )
+        padding: 100px 0 
+
     &__box
         display: grid
         grid-template-columns: 552px 1fr
         gap: 30px
 
+        @media ( max-width: 768px )
+            grid-template-columns: 100%
+            gap: 24px
+
     &__img
+        position: relative
         margin-left: auto
         margin-right: 110px
         margin-top: -90px
@@ -270,9 +391,22 @@
         max-width: 440px
         width: 100%
         object-fit: contain
+        z-index: -1
+
+        @media ( max-width: 768px )
+            position: absolute
+            right: -50px
+            bottom: -150px
+            max-width: 240px
+            height: 240px
+            margin: 0
+        
 
 .rules
     padding: 50px 0 135px
+
+    @media ( max-width: 768px )
+        padding: 100px 0
 
     &__heading
         max-width: 720px
@@ -281,8 +415,23 @@
         gap: 16px
         margin-bottom: 40px
 
+        @media ( max-width: 768px )
+            max-width: 100%
+            gap: 0
+            margin-bottom: 52px
+
     &__title
         margin-bottom: 14px
+
+        @media ( max-width: 768px )
+            max-width: 320px
+            margin-bottom: 24px
+
+    &__desc
+
+        &.fw-800
+            @media ( max-width: 768px )
+                margin-top: 12px
 
 
 .rule-item
@@ -296,6 +445,12 @@
     padding: 24px 30px
     height: 390px
     user-select: none
+
+    @media ( max-width: 768px )
+        height: 234px
+        gap: 16px
+        padding: 20px 16px
+        border-radius: 16px
 
     &::before
         content: ''
@@ -331,6 +486,12 @@
         margin-bottom: 20px
         transition: margin-bottom .5s ease
 
+        @media ( max-width: 768px )
+            font-size: 14px
+            margin-bottom: 16px
+            line-height: 110%
+
+
     &__subtitle
         color: #FFF
         font-size: 18px
@@ -340,6 +501,10 @@
         opacity: 0
         transition: opacity .6s ease
 
+        @media ( max-width: 768px )
+            font-size: 12px
+            line-height: 100%
+
     &__content
         display: flex
         flex-direction: column
@@ -347,6 +512,9 @@
         opacity: 0
         margin-bottom: 0px
         transition: margin-bottom .5s ease, opacity .5s ease
+
+        @media ( max-width: 768px )
+            gap: 4px
 
     &__point
         color: #FFF
@@ -356,6 +524,11 @@
         line-height: 120%
         display: flex
         gap: 8px
+
+        @media ( max-width: 768px )
+            font-size: 10px
+            line-height: 100%
+            gap: 6px
 
         &::before
             content: ''
@@ -367,12 +540,21 @@
             flex-shrink: 0
             margin-top: 7px
 
+            @media ( max-width: 768px )
+                width: 4px
+                height: 4px
+                margin-top: 4px
+
     &__link
         margin-top: 24px
         width: fit-content
         padding: 10px 12px
         opacity: 0
         transition: opacity 1.2s ease
+
+        @media ( max-width: 768px )
+            padding: 8px
+            margin-top: 10px
 
     &.hovered
         .rule-item__subtitle
@@ -414,6 +596,14 @@
         gap: 10px
         z-index: 10
 
+        @media (max-width: 768px)
+            position: relative
+            bottom: unset
+            right: unset
+            flex-direction: row-reverse
+            margin-top: 15px
+            justify-content: end
+
 .swiper-arrow-btn
     cursor: pointer
     width: 37px
@@ -426,6 +616,15 @@
     box-shadow: 0px 4px 9.4px rgba(255, 255, 255, 0.48)
     transition: .3s ease
 
+    @media (max-width: 768px)
+        width: 30px
+        height: 30px
+
+    svg
+        @media (max-width: 768px)
+            height: 12px
+            width: 6px
+
 
     &.swiper-button-disabled
         opacity: 0.5
@@ -437,8 +636,14 @@
     &__next
         padding-left: 3px
 
+        @media (max-width: 768px)
+            padding-left: 1px
+
     &__prev
         padding-right: 3px
+
+        @media (max-width: 768px)
+            padding-right: 1px
 
     &:hover
         scale: 1.05
@@ -451,6 +656,9 @@
 .announcement
     padding: 135px 0
 
+    @media (max-width: 768px)
+        padding: 100px 0
+
     &__title
         line-height: 110%
 
@@ -459,10 +667,19 @@
         grid-template-columns: 530px 1fr
         gap: 40px
 
+        @media (max-width: 768px)
+            grid-template-columns: 100%
+            gap: 52px
+            
+
     &__right
         display: flex
         flex-direction: column
         gap: 30px
+
+        @media (max-width: 768px)
+            order: -1
+            gap: 20px
 
     &__left
         display: flex
@@ -473,13 +690,24 @@
         backdrop-filter: blur(9.5px)
         border-radius: 22px
 
+        @media (max-width: 768px)
+            border-radius: 16px
+            padding: 20px 12px
+            gap: 20px
+
         &-inner
             min-height: 200px
+
+            @media (max-width: 768px)
+                min-height: 130px
 
     &__tab-content
         display: flex
         flex-direction: column
         gap: 16px
+
+        @media (max-width: 768px)
+            gap: 12px
 
     &__tab-title
         color: #FFF
@@ -488,11 +716,19 @@
         text-transform: uppercase
         line-height: 120%
 
+        @media (max-width: 768px)
+            font-size: 16px
+            line-height: 110%
+
     &__tab-desc
         color: #FFF
         font-size: 18px
         font-weight: 300
         line-height: 120%
+
+        @media (max-width: 768px)
+            font-size: 12px
+            line-height: 110%
 
 
     &__tabs
@@ -500,6 +736,11 @@
         grid-template-columns: repeat(4, 1fr)
         gap: 30px 25px
         border: none
+
+        @media (max-width: 768px)
+            display: flex
+            flex-wrap: wrap
+            gap: 12px
 
 .tab
     display: flex
@@ -514,6 +755,13 @@
     border: none !important
     outline: none !important
     transition: background .3s ease
+
+    @media (max-width: 768px)
+        width: 77px
+        height: 77px
+        gap: 6px
+        border: 8px
+        padding: 15px
 
     &[role=tab][aria-selected=true]
         background: linear-gradient(207deg, rgba(75, 137, 225, 0.42) 24.9%, rgba(27, 79, 163, 0.53) 88.23%), rgba(213, 231, 255, 0.10)
@@ -533,6 +781,9 @@
         line-height: 100%
         transition: font-weight .3s ease
 
+        @media (max-width: 768px)
+            font-size: 32px
+
     &__month
         color: #FFF
         font-size: 18px
@@ -540,27 +791,46 @@
         line-height: 100%
         transition: font-weight .3s ease
 
+        @media (max-width: 768px)
+            font-size: 14px
+
 
 
 .main-prize
     padding: 135px 0
+
+    @media (max-width: 768px)
+        padding: 100px 0
 
     &__box
         display: grid
         grid-template-columns: 1fr 420px
         gap: 30px
 
+        @media (max-width: 768px)
+            grid-template-columns: 100%
+            gap: 60px
+
     &__left
         display: flex
         flex-direction: column
         gap: 40px
 
+        @media (max-width: 768px)
+            gap: 24px
+
     &__title
         font-size: 80px
         line-height: 110%
+        
+        @media (max-width: 768px)
+            font-size: 48px
 
     &__desc
         max-width: 383px
+
+        @media (max-width: 768px)
+            max-width: 250px
 
     &__card
         position: relative
@@ -571,11 +841,29 @@
         flex-direction: column
         gap: 21px
 
+        .swiper-main-prize__btn
+
+            @media (max-width: 768px)
+                border-color: white
+                path
+                    stroke: white
+
+
+        @media (max-width: 768px)
+            border-radius: 16px
+            gap: 12px
+            padding: 20px 16px
+            max-width: calc(100% - 42px)
+
     &__right
         padding-top: 240px
         display: flex
         flex-direction: column
         gap: 30px
+
+        @media (max-width: 768px)
+            padding-top: 0
+            gap: 16px
 
     &__subtitle
         color: #FFF
@@ -584,9 +872,14 @@
         line-height: 110%
         text-transform: uppercase
 
+        @media (max-width: 768px)
+            font-size: 16px
+
 
 .swiper-main-prize
     overflow: hidden
+
+    
 
     &__pagi
         position: relative
@@ -608,6 +901,10 @@
             border: 1px solid #fff
             transition: background .3s ease
 
+            @media (max-width: 768px)
+                width: 8px
+                height: 8px
+
             &.swiper-pagination-bullet-active
                 background: #fff
 
@@ -618,22 +915,44 @@
         font-weight: 300
         line-height: 110%
 
+        @media (max-width: 768px)
+            font-size: 12px
+
     &__btn
         border-color: #080E23
         box-shadow: none
 
+    &__nav
+        @media (max-width: 768px)
+            position: absolute
+            bottom: 0
+            right: -42px
+            flex-direction: column
+            margin-top: 0
+            
+
 
 .faq
     padding: 135px 0
+
+    @media (max-width: 768px)
+        padding: 100px 0
 
     &__box
         display: flex
         flex-direction: column
         gap: 16px
 
+        @media (max-width: 768px)
+            gap: 12px
+
     &__title
         text-align: center
         margin-bottom: 40px
+
+        @media (max-width: 768px)
+            margin-bottom: 24px
+            text-align: left
 
 
 
@@ -645,14 +964,27 @@
     padding: 40px
     user-select: none
 
+    @media (max-width: 768px)
+        padding: 20px
+        border-radius: 16px
+
     &__head
         display: flex
         gap: 30px
         align-items: center
         justify-content: space-between
 
+        @media (max-width: 768px)
+            gap: 10px
+            align-items: start
+
     &__icon
         transition: transform .3s ease
+        flex-shrink: 0
+
+        @media (max-width: 768px)
+            width: 15px
+            height: 15px
 
 
     &__title
@@ -662,6 +994,9 @@
         line-height: 120%
         text-transform: uppercase
 
+        @media (max-width: 768px)
+            font-size: 16px
+
     &__body
         overflow: hidden
         max-height: 0
@@ -669,6 +1004,10 @@
 
     &__desc
         margin-top: 16px
+
+        @media (max-width: 768px)
+            font-size: 12px
+            max-width: calc(100% - 30px)
 
     &.active
         .faq-item__icon
@@ -679,12 +1018,23 @@
 .feedback
     padding: 135px 0 270px
 
+    @media (max-width: 768px)
+        padding: 100px 0
+
     &__box
         position: relative
         display: grid
         grid-template-columns: 373px 1fr
         gap: 30px
         padding: 100px 38px 50px
+
+        @media (max-width: 768px)
+            padding: 30px 12px 25px
+            grid-template-columns: 100%
+            gap: 20px
+            background: linear-gradient(129deg, rgba(75, 137, 225, 0.11) 4.15%, rgba(27, 79, 163, 0.53) 66.46%)
+            backdrop-filter: blur(17px)
+            border-radius: 16px
 
     &__bg
         position: absolute
@@ -695,15 +1045,24 @@
         height: 490px
         z-index: -1
 
+        @media (max-width: 768px)
+            display: none
+
     &__left
         display: flex
         flex-direction: column
         gap: 30px
 
+        @media (max-width: 768px)
+            gap: 15px
+
     &__title
         color: #fff
         text-shadow: none
         line-height: 110%
+
+        @media (max-width: 768px)
+            text-shadow: 2px 2px 7.6px #5C9FFF, 194px 180px 74px rgba(79, 130, 232, 0.01), 124px 115px 68px rgba(79, 130, 232, 0.07), 70px 65px 57px rgba(79, 130, 232, 0.25), 31px 29px 42px rgba(79, 130, 232, 0.43), 8px 7px 23px rgba(79, 130, 232, 0.49)
 
     &__desc
         color: #FFF
@@ -711,11 +1070,18 @@
         font-weight: 300
         line-height: normal
 
+        @media (max-width: 768px)
+            font-size: 16px
+
+
 
 .feedback-form
     display: flex
     flex-direction: column
     gap: 24px
+
+    @media (max-width: 768px)
+        gap: 16px
 
     &__textarea
         resize: none
@@ -731,6 +1097,12 @@
         font-weight: 100
         line-height: 120%
 
+        @media (max-width: 768px)
+            font-size: 12px
+            line-height: 110%
+            padding: 16px
+            height: 92px
+
         &::placeholder
             color: #fff
             opacity: .5
@@ -738,11 +1110,17 @@
     &__btn
         width: fit-content
 
+        @media (max-width: 768px)
+            font-size: 14px
+
+
 
 
 .footer
     background: #00091E
     padding: 40px 0 30px
+
+    @media (max-width: 768px)
 
     &__cont
         width: 100%
@@ -750,13 +1128,26 @@
         padding-inline: 10px
         margin-inline: auto
 
+        @media (max-width: 768px)
+            padding-inline: 16px
+
     &__grid
         display: grid
         grid-template-columns: repeat(2, 1fr)
         gap: 42px
 
+
     &__logo
         display: flex
+
+        svg
+            @media (max-width: 768px)
+                width: 100%
+                height: 100%
+
+        @media (max-width: 768px)
+            max-width: 84px
+            height: 26px
 
     &__social
         display: flex
@@ -764,8 +1155,16 @@
         justify-content: end
         gap: 16px
 
+        @media (max-width: 768px)
+            gap: 10px
+
     &__link
         display: flex
+
+        svg
+            @media (max-width: 768px)
+                width: 28px
+                height: 28px
 
         path
             transition: fill .3s ease
@@ -785,6 +1184,10 @@
         font-size: 20px
         font-weight: 300
         line-height: 100%
+
+        @media (max-width: 768px)
+            font-size: 16px
+
         a
             transition: opacity .3s ease
 
@@ -801,11 +1204,22 @@
         gap: 30px
         margin-top: 16px
 
+        @media (max-width: 768px)
+            max-width: 100%
+            margin-top: 10px
+            gap: 20px
+
     &__subtitle
         color: #080E23
         font-size: 34px
         font-weight: 500
         line-height: 120%
+
+        @media (max-width: 768px)
+            font-size: 16px
+            line-height: 110%
+            order: -1
+
         span
             color: #0059D7
 
@@ -814,18 +1228,32 @@
         grid-template-columns: repeat(3, 1fr)
         gap: 23px
 
+        @media (max-width: 768px)
+            grid-template-columns: 100%
+            gap: 10px
+
+
     &__criteria
         color: #080E23
         font-size: 18px
         font-style: italic
         font-weight: 100
         line-height: 110%
+        
+        @media (max-width: 768px)
+            font-size: 16px
 
         b
             font-weight: 300
 
     &__nav
         bottom: 50px
+
+        @media (max-width: 768px)
+            bottom: unset
+            margin-top: -10px
+            order: 1
+            justify-content: start
 
 .swiper-modal-rule-title
     overflow: hidden
@@ -835,6 +1263,12 @@
     padding: 25px 23px 30px
     border-radius: 20px
     background: rgba(0, 89, 215, 0.20)
+
+    @media (max-width: 768px)
+        padding: 16px
+        display: grid
+        grid-template-columns: 64px 1fr
+        column-gap: 12px
 
     &:nth-child(2)
         .rule-winner__img
@@ -851,11 +1285,24 @@
         width: 157px
         margin-inline: auto
         margin-bottom: 30px
+        
+        @media (max-width: 768px)
+            width: 64px
+            height: 64px
+            grid-row: 1 / 3
+            margin-top: auto
+            margin-bottom: auto
 
         svg
             position: absolute
             bottom: -20px
             right: -17px
+
+            @media (max-width: 768px)
+                width: 26px
+                height: 31px
+                bottom: -8px
+                right: -3px
 
     &__img
         width: 100%
@@ -863,6 +1310,10 @@
         object-fit: cover
         border-radius: 50%
         border: 5px solid #0059D7
+
+        @media (max-width: 768px)
+            border: 2px solid #0059D7
+
 
     &__title
         color: #080E23
@@ -872,6 +1323,11 @@
         line-height: 120%
         margin-bottom: 7px
 
+        @media (max-width: 768px)
+            text-align: left
+            font-size: 16px
+            line-height: 110%
+
     &__desc
         color: #080E23
         font-size: 14px
@@ -879,12 +1335,23 @@
         line-height: 120%
         text-align: center
 
+        @media (max-width: 768px)
+            text-align: left
+            font-size: 12px
+
 .swiper-modal-rule-winners
     overflow: hidden
     border-radius: 20px
 
+    @media ( max-width: 768px )
+        order: 0
+
 .swiper-modal-rule-criteria
     overflow: hidden
+
+    @media ( max-width: 768px )
+        order: 2
+        
 
 
 
@@ -895,6 +1362,9 @@
     align-items: center
     justify-content: center
     padding: 16px
+
+    @media ( max-width: 768px )
+        padding: 32px
 
     &::after
         content: ''
@@ -929,6 +1399,10 @@
         max-width: 552px
         width: 100%
 
+        @media ( max-width: 768px )
+            max-width: 100%
+            padding: 40px 14px
+
     &__title
         color: #000
         text-align: center
@@ -936,6 +1410,9 @@
         font-weight: 400
         line-height: 100%
         text-transform: uppercase
+
+        @media ( max-width: 768px )
+            font-size: 22px
 
     &__form
         display: flex
@@ -956,6 +1433,9 @@
         font-weight: 100
         line-height: 100%
 
+        @media ( max-width: 768px )
+            padding: 13px 23px
+
         &::placeholder
             color: #000
             opacity: .3
@@ -968,6 +1448,10 @@
         transition: opacity .3s ease
         margin-top: 24px
 
+        @media ( max-width: 768px )
+            padding: 18px 30px
+            font-size: 16px
+
         &:hover
             opacity: .7
 
@@ -978,6 +1462,9 @@
         font-weight: 100
         line-height: 120%
         transition: opacity .3s ease
+
+        @media ( max-width: 768px )
+            font-size: 16px
 
         &:hover
             opacity: .7
