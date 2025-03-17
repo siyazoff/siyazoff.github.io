@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const distanceToFooter = footerRect.top - viewportHeight + 50;
 
     if (distanceToFooter <= 0) {
-      scrollbar.style.top = "40%";
+      scrollbar.style.top = "30%";
     } else {
       scrollbar.style.top = "50%";
       scrollbar.style.transform = "translateY(-50%)";
