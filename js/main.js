@@ -134,10 +134,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (anyModal && !event.target.closest(".modal-inner")) {
       anyModal.classList.remove("is_active");
       // Если больше нет открытых модалок, убираем класс у body
+
+      resetModalSwipers(anyModal);
+
       if (!document.querySelector(".modal.is_active")) {
         document.body.classList.remove("noscroll");
       }
       return;
     }
   });
+
+  function resetModalSwipers(modalEl) {
+    // Предположим, data-modal="rule-modal-1"
+    // Вытаскиваем "rule-modal-1"
+    const modalId = modalEl.getAttribute("data-modal"); // "rule-modal-1"
+    // Извлекаем цифру (или что-то после "rule-modal-")
+    const match = modalId.match(/rule-modal-(\d+)/);
+    if (!match) return; // на всякий случай
+
+    const sliderId = match[1]; // "1", "2", ...
+
+    // Получаем объект { swiperTitle, swiperWinners, swiperCriteria }
+    const group = modalRuleSwipers[sliderId];
+    if (!group) return;
+
+    // Сбрасываем все на индекс 0
+    group.swiperTitle.slideTo(0, 0);
+    group.swiperWinners.slideTo(0, 0);
+    group.swiperCriteria.slideTo(0, 0);
+  }
 });

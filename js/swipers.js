@@ -57,6 +57,8 @@ const swiperMainPrize = new Swiper(".swiper-main-prize", {
   },
 });
 
+const modalRuleSwipers = {};
+
 const buildModalRuleSwiper = (sliderElm) => {
   let sliderIdentifier = sliderElm.dataset.id;
 
@@ -113,6 +115,12 @@ const buildModalRuleSwiper = (sliderElm) => {
     swiperTitle.slideTo(index);
     swiperWinners.slideTo(index);
   });
+
+  modalRuleSwipers[sliderIdentifier] = {
+    swiperTitle,
+    swiperWinners,
+    swiperCriteria,
+  };
 };
 
 // Находим все группы Swiper'ов и инициализируем их
