@@ -427,7 +427,7 @@
 }
 @media (max-width: 768px) {
   .hero {
-    padding: 150px 0 100px;
+    padding: 160px 0 100px;
     min-height: -moz-fit-content;
     min-height: fit-content;
   }
@@ -626,6 +626,7 @@
 
 .rules {
   padding: 0 0 35px;
+  margin-top: -50px;
 }
 @media (max-width: 768px) {
   .rules {
