@@ -1237,7 +1237,7 @@
 }
 @media (max-width: 768px) {
   .faq {
-    padding: 100px 0;
+    padding: 50px 0 100px;
   }
 }
 .faq__box {
