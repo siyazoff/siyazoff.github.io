@@ -701,7 +701,7 @@
             min-height: 200px
 
             @media (max-width: 768px)
-                min-height: 130px
+                min-height: fit-content
 
     &__tab-content
         display: flex
@@ -710,6 +710,7 @@
 
         @media (max-width: 768px)
             gap: 12px
+            min-height: 130px
 
     &__tab-title
         color: #FFF
@@ -731,6 +732,7 @@
         @media (max-width: 768px)
             font-size: 12px
             line-height: 110%
+            margin-top: auto
 
 
     &__tabs
