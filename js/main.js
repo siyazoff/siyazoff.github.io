@@ -217,12 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       wrapper.style.width = `${baseWidthMobile}px`;
       header.style.transform = `scale(${scaleXMobile})`;
+      header.style.width = `${baseWidthMobile}px`;
     } else {
       const scaleX = window.innerWidth / baseWidth;
 
       wrapper.style.transform = `scale(${scaleX})`;
       wrapper.style.width = `${baseWidth}px`;
 
+      header.style.width = `${baseWidth}px`;
       header.style.transform = `scale(${scaleX})`;
     }
   }
