@@ -1924,12 +1924,14 @@ body {
 }
 
 .allmonth__subtitle {
+  position: relative;
   color: #000;
   font-size: 24px;
   font-weight: 500;
   line-height: 100%;
   margin-bottom: 16px;
   margin-top: 48px;
+  padding-right: 30px;
 }
 @media (max-width: 768px) {
   .allmonth__subtitle {
@@ -1939,6 +1941,24 @@ body {
 }
 .allmonth__subtitle span {
   color: #0059D7;
+}
+.allmonth__subtitle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-image: url("../src/icons/finger-swipe.gif");
+  display: none;
+}
+@media (max-width: 768px) {
+  .allmonth__subtitle::after {
+    display: flex;
+  }
 }
 
 .tabs-container {
