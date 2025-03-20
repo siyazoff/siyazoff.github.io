@@ -978,7 +978,7 @@
 @media (max-width: 768px) {
   .announcement__tab-content {
     gap: 12px;
-    min-height: 130px;
+    min-height: 100px;
   }
 }
 .announcement__tab-title {
@@ -1004,7 +1004,6 @@
   .announcement__tab-desc {
     font-size: 12px;
     line-height: 110%;
-    margin-top: auto;
   }
 }
 .announcement__tabs {
