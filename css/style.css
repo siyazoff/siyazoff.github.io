@@ -2013,6 +2013,7 @@ body {
   cursor: pointer;
   font-size: 18px;
   line-height: 100%;
+  color: #000;
 }
 @media (max-width: 768px) {
   .month-select {
