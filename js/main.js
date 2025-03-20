@@ -204,4 +204,28 @@ document.addEventListener("DOMContentLoaded", () => {
     group.swiperWinners.slideTo(0, 0);
     group.swiperCriteria.slideTo(0, 0);
   }
+
+  function scaleContent() {
+    const baseWidth = 1440; // Базовая ширина сайта
+    const wrapper = document.querySelector(".pecowrapper");
+    const header = document.querySelector(".header");
+
+    // Если ширина экрана меньше 768px, отключаем масштабирование
+    if (window.innerWidth < 768) {
+      wrapper.style.transform = ""; // Сбрасываем transform
+      wrapper.style.width = "100%"; // Устанавливаем ширину 100% для мобильных устройств
+    } else {
+      // Рассчитываем масштаб по ширине экрана
+      const scaleX = window.innerWidth / baseWidth;
+
+      // Применяем масштабирование к обёртке всего контента
+      wrapper.style.transform = `scale(${scaleX})`;
+      wrapper.style.width = `${baseWidth}px`;
+
+      header.style.transform = `scale(${scaleX})`;
+    }
+  }
+
+  window.addEventListener("resize", scaleContent);
+  scaleContent();
 });
