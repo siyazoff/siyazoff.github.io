@@ -206,19 +206,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function scaleContent() {
-    const baseWidth = 1440; // Базовая ширина сайта
+    const baseWidth = 1440;
+    const baseWidthMobile = 360;
     const wrapper = document.querySelector(".pecowrapper");
     const header = document.querySelector(".header");
 
-    // Если ширина экрана меньше 768px, отключаем масштабирование
     if (window.innerWidth < 768) {
-      wrapper.style.transform = ""; // Сбрасываем transform
-      wrapper.style.width = "100%"; // Устанавливаем ширину 100% для мобильных устройств
+      const scaleXMobile = window.innerWidth / baseWidthMobile;
+      wrapper.style.transform = `scale(${scaleXMobile})`;
+
+      wrapper.style.width = `${baseWidthMobile}px`;
+      header.style.transform = `scale(${scaleXMobile})`;
     } else {
-      // Рассчитываем масштаб по ширине экрана
       const scaleX = window.innerWidth / baseWidth;
 
-      // Применяем масштабирование к обёртке всего контента
       wrapper.style.transform = `scale(${scaleX})`;
       wrapper.style.width = `${baseWidth}px`;
 
