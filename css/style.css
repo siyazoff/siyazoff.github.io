@@ -1308,6 +1308,14 @@
   line-height: 120%;
   text-transform: uppercase;
 }
+.faq-item__title br.not-desk {
+  display: none;
+}
+@media (max-width: 768px) {
+  .faq-item__title br.not-desk {
+    display: flex;
+  }
+}
 @media (max-width: 768px) {
   .faq-item__title {
     font-size: 16px;

@@ -999,6 +999,14 @@
         line-height: 120%
         text-transform: uppercase
 
+        br
+            &.not-desk
+                display: none
+
+                @media (max-width: 768px)
+                    display: flex
+
+
         @media (max-width: 768px)
             font-size: 16px
 

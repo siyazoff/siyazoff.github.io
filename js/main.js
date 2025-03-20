@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const parentModal = closeTrigger.closest(".modal");
       if (parentModal) {
         parentModal.classList.remove("is_active");
+        resetModalSwipers(anyModal);
         // Если нет ни одной открытой модалки, убираем класс у body
         if (!document.querySelector(".modal.is_active")) {
           document.body.classList.remove("noscroll");
@@ -175,10 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // 3) Закрытие по клику на подложку (т.е. фон .modal, но НЕ по .modal-form)
     if (anyModal && !event.target.closest(".modal-inner")) {
       anyModal.classList.remove("is_active");
-      // Если больше нет открытых модалок, убираем класс у body
 
       resetModalSwipers(anyModal);
 
