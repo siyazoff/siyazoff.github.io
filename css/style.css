@@ -424,7 +424,6 @@
 .hero {
   position: relative;
   padding: 200px 0 100px;
-  min-height: 1000px;
 }
 @media (max-width: 768px) {
   .hero {
@@ -606,7 +605,7 @@
   position: relative;
   margin-left: auto;
   margin-right: 110px;
-  margin-top: -90px;
+  margin-top: -50px;
   height: 440px;
   max-width: 440px;
   width: 100%;
@@ -626,7 +625,7 @@
 }
 
 .rules {
-  padding: 50px 0 135px;
+  padding: 0 0 35px;
 }
 @media (max-width: 768px) {
   .rules {
@@ -911,7 +910,7 @@
 }
 
 .announcement {
-  padding: 135px 0;
+  padding: 100px 0;
 }
 @media (max-width: 768px) {
   .announcement {
@@ -1079,7 +1078,7 @@
 }
 
 .main-prize {
-  padding: 135px 0;
+  padding: 100px 0;
 }
 @media (max-width: 768px) {
   .main-prize {
@@ -1233,7 +1232,7 @@
 }
 
 .faq {
-  padding: 135px 0;
+  padding: 130px 0;
 }
 @media (max-width: 768px) {
   .faq {
