@@ -846,6 +846,11 @@
   z-index: 10;
 }
 @media (max-width: 768px) {
+  .swiper-rules__nav_mob-no {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
   .swiper-rules__nav {
     position: relative;
     bottom: unset;
@@ -853,7 +858,6 @@
     flex-direction: row-reverse;
     margin-top: 15px;
     justify-content: end;
-    display: none;
   }
 }
 
@@ -1132,14 +1136,6 @@
   display: flex;
   flex-direction: column;
   gap: 21px;
-}
-@media (max-width: 768px) {
-  .main-prize__card .swiper-main-prize__btn {
-    border-color: white;
-  }
-  .main-prize__card .swiper-main-prize__btn path {
-    stroke: white;
-  }
 }
 @media (max-width: 768px) {
   .main-prize__card {

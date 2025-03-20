@@ -598,6 +598,10 @@
         gap: 10px
         z-index: 10
 
+        &_mob-no
+            @media (max-width: 768px)    
+                display: none
+
         @media (max-width: 768px)
             position: relative
             bottom: unset
@@ -605,7 +609,6 @@
             flex-direction: row-reverse
             margin-top: 15px
             justify-content: end
-            display: none
 
 .swiper-arrow-btn
     cursor: pointer
@@ -848,9 +851,9 @@
         .swiper-main-prize__btn
 
             @media (max-width: 768px)
-                border-color: white
-                path
-                    stroke: white
+                // border-color: white
+                // path
+                //     stroke: white
 
 
         @media (max-width: 768px)
